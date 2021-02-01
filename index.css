@@ -34,7 +34,7 @@ a.float:hover {
     margin-top: 22px;
 }
 
-button#buscar {
+button.acciones {
     display: block;
     width: 100%;
 }

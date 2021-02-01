@@ -123,6 +123,6 @@ $("#buscar").click(async function (){
     dibujar(result,numero,cable); 
 })
 
-$(".float").click(function(){
+$("#borrar").click(function(){
     $("#resultados").html("");
 })
