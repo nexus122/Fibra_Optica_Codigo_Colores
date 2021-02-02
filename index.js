@@ -104,29 +104,29 @@ function search(table, numero, cableInfo) {
 }
 
 function dibujar(result, numero, cable) {
+    var d = new Date();
+    var n = d.getTime();
     $("#resultados").append(`<hr>`);
     $("#resultados").append(`<h3>Cable: <b>${cables[cable]}</b> Numero: <b>${numero}</b></h3>`);
     $("#resultados").append(`<h3>Tubo <b>${result[0]}</b> Color <i class="fas fa-square-full" style="color:${result[1]}"></i> ${result[2]}</h3>`);
-    $("#resultados").append(`<h3>Fibra <b>${result[3]}</b> Color <i class="fas fa-square-full" style="color:${result[4]}"></i> ${result[5]}</h3>`)
-    generarMarcas(cables[cable], result);
-
-
+    $("#resultados").append(`<h3>Fibra <b>${result[3]}</b> Color <i class="fas fa-square-full" style="color:${result[4]}"></i> ${result[5]} <span class="marca_${n}"></span></h3>`)
+    generarMarcas(cables[cable], result, n);
 }
 
-function generarMarcas(tipoCable, result) {
-    if (tipoCable == "256 F.O PKP") {        
+function generarMarcas(tipoCable, result, n) {
+    if (tipoCable == "256 F.O PKP") {
         if (parseInt(result[3]) >= 13) {
-            $("#resultados").append(`<h3>--/</h3>`);
+            $(".marca_"+n).append(`--/`);
         }
     }
 
-    if (tipoCable == "512 F.O PKP") {        
+    if (tipoCable == "512 F.O PKP") {
         if (parseInt(result[3]) >= 9 && result[3] < 17) {
-            $("#resultados").append(`<h3>--/</h3>`);
-        }else if(parseInt(result[3]) >= 17 && result[3] < 25){
-            $("#resultados").append(`<h3>--/ --/</h3>`);
-        }else if(parseInt(result[3]) >= 25){
-            $("#resultados").append(`<h3>--/ --/ --/</h3>`);
+            $(".marca_"+n).append(`--/`);
+        } else if (parseInt(result[3]) >= 17 && result[3] < 25) {
+            $(".marca_"+n).append(`--/ --/`);
+        } else if (parseInt(result[3]) >= 25) {
+            $(".marca_"+n).append(`--/ --/ --/`);
         }
     }
 }
