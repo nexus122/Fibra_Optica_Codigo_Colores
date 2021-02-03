@@ -122,11 +122,11 @@ function generarMarcas(tipoCable, result, n) {
 
     if (tipoCable == "512 F.O PKP") {
         if (parseInt(result[3]) >= 9 && result[3] < 17) {
-            $(".marca_"+n).append(`primero __/`);
+            $(".marca_"+n).append(`primero /`);
         } else if (parseInt(result[3]) >= 17 && result[3] < 25) {
-            $(".marca_"+n).append(`segundo __/ __/`);
+            $(".marca_"+n).append(`segundo / /`);
         } else if (parseInt(result[3]) >= 25) {
-            $(".marca_"+n).append(`tercero __/ __/ __/`);
+            $(".marca_"+n).append(`tercero / / /`);
         }
     }
 }
