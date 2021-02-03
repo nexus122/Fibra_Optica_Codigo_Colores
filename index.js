@@ -116,17 +116,17 @@ function dibujar(result, numero, cable) {
 function generarMarcas(tipoCable, result, n) {
     if (tipoCable == "256 F.O PKP") {
         if (parseInt(result[3]) >= 13) {
-            $(".marca_"+n).append(`primero --/`);
+            $(".marca_"+n).append(`primero __/`);
         }
     }
 
     if (tipoCable == "512 F.O PKP") {
         if (parseInt(result[3]) >= 9 && result[3] < 17) {
-            $(".marca_"+n).append(`primero --/`);
+            $(".marca_"+n).append(`primero __/`);
         } else if (parseInt(result[3]) >= 17 && result[3] < 25) {
-            $(".marca_"+n).append(`segundo --/ --/`);
+            $(".marca_"+n).append(`segundo __/ __/`);
         } else if (parseInt(result[3]) >= 25) {
-            $(".marca_"+n).append(`tercero --/ --/ --/`);
+            $(".marca_"+n).append(`tercero __/ __/ __/`);
         }
     }
 }
