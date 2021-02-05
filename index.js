@@ -19,8 +19,8 @@ var cables = [
     "128 F.O PKP",
     "256 F.O PKP",
     "512 F.O PKP",
-    "144 F.O Franica",
-    "288 F.O Franica",
+    "144 F.O Francia",
+    "288 F.O Francia",
 ]
 
 /* En ingles para el color */
@@ -143,13 +143,13 @@ function generarMarcas(tipoCable, result, n) {
         }
     }
 
-    if (tipoCable == "144 F.O Franica") {
+    if (tipoCable == "144 F.O Francia") {
         if (parseInt(result[3]) >= 97) {
             $(".marca_" + n).append(`primero /`);
         }
     }
 
-    if (tipoCable == "288 F.O Franica") {
+    if (tipoCable == "288 F.O Francia") {
         if (parseInt(result[3]) >= 193) {
             $(".marca_" + n).append(`primero /`);
         }
