@@ -15,11 +15,7 @@
 
         gtag('config', 'G-JPQQPX3BNN');
     </script>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <!-- Fontawersome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
@@ -30,21 +26,9 @@
 </head>
 
 <body>
-
-    <!--<div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <b>Esta aplicación esta en desarrollo</b> Si encuentras algún problema avísanos y lo solucionaremos 🦾
-        <a class="btn btn-primary" href="mailto:problems@juanpabloromeropereira.es"><i class="far fa-envelope"></i></a>
-    </div>-->
-
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div>
-                    <img class="logo"
-                        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyLjAwMiA1MTIuMDAyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDAyIDUxMi4wMDI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGRkRDNjQ7IiBkPSJNMjg5LjYwNSwyNTAuODM4Yy0zLjAyNC00LjMxOS03Ljk3Ni02Ljg5NS0xMy4yNS02Ljg5NWwtNDAuMzg3LDAuNDY0bDI3Ljc5LTc2LjQxOQ0KCWMxLjU2NS00LjI4Ni0wLjY1My05LjAyNC00LjkzNS0xMC41ODVjLTQuMjk4LTEuNTYtOS4wMjQsMC42NTctMTAuNTgxLDQuOTRsLTI3Ljc5LDc2LjQxNWMtMS44MDYsNC45NTYtMS4wODEsMTAuNDg4LDEuOTQ0LDE0LjgwNg0KCWMzLjAyNCw0LjMxOSw3Ljk3Niw2Ljg5NSwxMy4yNSw2Ljg5NWw0MC4zODctMC40NjRsLTE4LjY3NSw1MS4zNTRsLTAuMTQ4LTAuOTg3Yy0wLjY2OS00LjUwNC00LjgzMS03LjYyMS05LjM4Ny02Ljk0NA0KCWMtNC41MTYsMC42NzMtNy42MjEsNC44NzUtNi45NTIsOS4zODdsNS4yNzQsMzUuMjU4YzAuNDY4LDMuMTA1LDIuNjUzLDUuNjc3LDUuNjM3LDYuNjQxYzAuODMxLDAuMjY2LDEuNjg1LDAuMzk1LDIuNTMyLDAuMzk1DQoJYzIuMTk0LDAsNC4zMzktMC44NzUsNS45MTktMi41bDI0Ljg0Ny0yNS41NmMzLjE3Ny0zLjI3NCwzLjEwNS04LjUtMC4xNjEtMTEuNjgxYy0zLjItMy4xMDktOC4yNzEtMy4wNjUtMTEuNDU3LDAuMDE4DQoJbDE4LjA4Ni00OS43MzJDMjkzLjM1NSwyNjAuNjg4LDI5Mi42MjksMjU1LjE1NiwyODkuNjA1LDI1MC44Mzh6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojMDBDM0ZGOyIgZD0iTTE0Ni42NDUsMjMxLjIyOUg5MC44MzljLTQuNTY1LDAtOC4yNTgtMy42OTgtOC4yNTgtOC4yNThzMy42OTQtOC4yNTgsOC4yNTgtOC4yNThoNTUuODA2DQoJYzQuMzQ3LDAsOC42MDUtMS43NjIsMTEuNjc3LTQuODM5bDE3LjUxNi0xNy41MTZjMy4yMjYtMy4yMjYsOC40NTItMy4yMjYsMTEuNjc3LDBjMy4yMjYsMy4yMjYsMy4yMjYsOC40NTIsMCwxMS42NzdMMTcwLDIyMS41NTENCglDMTYzLjg1NSwyMjcuNywxNTUuMzQ3LDIzMS4yMjksMTQ2LjY0NSwyMzEuMjI5eiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0U2NjQ2RTsiIGQ9Ik0yMDYuNDUyLDI4OS4wMzVjLTIuMTEzLDAtNC4yMjYtMC44MDYtNS44MzktMi40MTlMMTgzLjA5NywyNjkuMQ0KCWMtMy4wNzMtMy4wNzctNy4zMzEtNC44MzktMTEuNjc3LTQuODM5SDgyLjU4MWMtNC41NjUsMC04LjI1OC0zLjY5OC04LjI1OC04LjI1OHMzLjY5NC04LjI1OCw4LjI1OC04LjI1OGg4OC44MzkNCgljOC43MDIsMCwxNy4yMSwzLjUyOCwyMy4zNTUsOS42NzdsMTcuNTE2LDE3LjUxNmMzLjIyNiwzLjIyNiwzLjIyNiw4LjQ1MiwwLDExLjY3Nw0KCUMyMTAuNjc3LDI4OC4yMjksMjA4LjU2NSwyODkuMDM1LDIwNi40NTIsMjg5LjAzNXoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGRkRDNjQ7IiBkPSJNMTczLjQxOSwzMzAuMzI1Yy0yLjExMywwLTQuMjI2LTAuODA2LTUuODM5LTIuNDE5bC0yNS43NzQtMjUuNzc0DQoJYy0zLjA3My0zLjA3Ny03LjMzMS00LjgzOS0xMS42NzctNC44MzloLTM5LjI5Yy00LjU2NSwwLTguMjU4LTMuNjk4LTguMjU4LTguMjU4czMuNjk0LTguMjU4LDguMjU4LTguMjU4aDM5LjI5DQoJYzguNzAyLDAsMTcuMjEsMy41MjgsMjMuMzU1LDkuNjc3bDI1Ljc3NCwyNS43NzRjMy4yMjYsMy4yMjYsMy4yMjYsOC40NTIsMCwxMS42NzcNCglDMTc3LjY0NSwzMjkuNTE5LDE3NS41MzIsMzMwLjMyNSwxNzMuNDE5LDMzMC4zMjV6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojNUQ1MzYwOyIgZD0iTTEyMS40NTIsMzA3Ljk3MWwtMTEuNjc3LTExLjY3N2MtMy4xOTUtMy4xOTctNy4xMjctNS4zNC0xMS40MDMtNi4zOTQNCgljLTIuMjk5LTAuNTY3LTQuMTI5LTIuMzE1LTUuMTg4LTQuNDMzbC04LjY4OC0xNy4zNzVjLTEuMTg0LTIuMzY4LTEuMDA5LTUuMTksMC40Ni03LjM5M2wxMi4xMjQtMTguMTg3DQoJYzEuMjcxLTEuOTA3LDEuNTg0LTQuMjk2LDAuODQ3LTYuNDY2bC00LjE5OC0xMi4zNmMtMS4wOC0zLjE4LDAuMTE4LTYuNjg0LDIuOTIzLTguNTMyYzUuOTMxLTMuOTA3LDE1LjI4Mi0xMC4wODYsMTUuMjgyLTEwLjA4Ng0KCWMzLjc5OC0yLjUyOCw0LjgyMy03LjY1NywyLjI5LTExLjQ1MmMtMi41MzItMy44MDItNy42NTMtNC44MzUtMTEuNDUyLTIuMjlMODQuMjQsMjAzLjY4MWMtMi43MTMsMS44MDktNS45MDEsMi43NzQtOS4xNjMsMi43NzQNCglIOC4yNThjLTQuNTYxLDAtOC4yNTgsMy42OTctOC4yNTgsOC4yNTh2ODIuNTgxYzAsNC41NjEsMy42OTcsOC4yNTgsOC4yNTgsOC4yNThoODRjMi4xODksMCw0LjI4OSwwLjg3LDUuODM3LDIuNDE4bDExLjY3OSwxMS42NzkNCgljMS42MTMsMS42MTMsMy43MjYsMi40MTksNS44MzksMi40MTlzNC4yMjYtMC44MDYsNS44MzktMi40MTlDMTI0LjY3NywzMTYuNDIyLDEyNC42NzcsMzExLjE5NiwxMjEuNDUyLDMwNy45NzF6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojNEIzRjRFOyIgZD0iTTAsMjk3LjI5M2MwLDQuNTYsMy42OTcsOC4yNTgsOC4yNTgsOC4yNThoODRjMi4xOSwwLDQuMjg5LDAuODY5LDUuODM3LDIuNDE4bDExLjY3OSwxMS42NzkNCgljMS42MTMsMS42MTMsMy43MjYsMi40MTksNS44MzksMi40MTlzNC4yMjYtMC44MDYsNS44MzktMi40MTljMy4yMjYtMy4yMjYsMy4yMjYtOC40NTIsMC0xMS42NzdsLTExLjY3Ny0xMS42NzcNCgljLTMuMTk1LTMuMTk3LTcuMTI3LTUuMzQtMTEuNDAzLTYuMzk0Yy0yLjI5OS0wLjU2Ny00LjEyOS0yLjMxNS01LjE4OC00LjQzM2wtNi40NzQtMTIuOTQ4SDBWMjk3LjI5M3oiLz4NCjxnPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0VCQzlBMDsiIGN4PSIxODEuNjgiIGN5PSIxOTguMTkxIiByPSI4LjI1OCIvPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0VCQzlBMDsiIGN4PSIxNzMuNDIiIGN5PSIzMjIuMDcxIiByPSI4LjI1OCIvPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0VCQzlBMDsiIGN4PSIyMDYuNDUiIGN5PSIyODAuNzgxIiByPSI4LjI1OCIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGREM2NDsiIGQ9Ik0zNjUuMzU1LDI4MC43NzdoNTUuODA2YzQuNTY1LDAsOC4yNTgsMy42OTgsOC4yNTgsOC4yNThzLTMuNjk0LDguMjU4LTguMjU4LDguMjU4aC01NS44MDYNCgljLTQuMzQ3LDAtOC42MDUsMS43NjItMTEuNjc3LDQuODM5bC0xNy41MTYsMTcuNTE2Yy0zLjIyNiwzLjIyNi04LjQ1MiwzLjIyNi0xMS42NzcsMGMtMy4yMjYtMy4yMjYtMy4yMjYtOC40NTIsMC0xMS42NzcNCglMMzQyLDI5MC40NTRDMzQ4LjE0NSwyODQuMzA1LDM1Ni42NTMsMjgwLjc3NywzNjUuMzU1LDI4MC43Nzd6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojRTY2NDZFOyIgZD0iTTMwNS41NDgsMjIyLjk3MWMyLjExMywwLDQuMjI2LDAuODA2LDUuODM5LDIuNDE5bDE3LjUxNiwxNy41MTYNCgljMy4wNzMsMy4wNzcsNy4zMzEsNC44MzksMTEuNjc3LDQuODM5aDg4LjgzOWM0LjU2NSwwLDguMjU4LDMuNjk4LDguMjU4LDguMjU4cy0zLjY5NCw4LjI1OC04LjI1OCw4LjI1OEgzNDAuNTgNCgljLTguNzAyLDAtMTcuMjEtMy41MjgtMjMuMzU1LTkuNjc3bC0xNy41MTYtMTcuNTE2Yy0zLjIyNi0zLjIyNi0zLjIyNi04LjQ1MiwwLTExLjY3Nw0KCUMzMDEuMzIzLDIyMy43NzcsMzAzLjQzNSwyMjIuOTcxLDMwNS41NDgsMjIyLjk3MXoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiMwMEMzRkY7IiBkPSJNMzM4LjU4MSwxODEuNjhjMi4xMTMsMCw0LjIyNiwwLjgwNiw1LjgzOSwyLjQxOWwyNS43NzQsMjUuNzc0DQoJYzMuMDczLDMuMDc3LDcuMzMxLDQuODM5LDExLjY3Nyw0LjgzOWgzOS4yOWM0LjU2NSwwLDguMjU4LDMuNjk4LDguMjU4LDguMjU4cy0zLjY5NCw4LjI1OC04LjI1OCw4LjI1OGgtMzkuMjkNCgljLTguNzAyLDAtMTcuMjEtMy41MjgtMjMuMzU1LTkuNjc3bC0yNS43NzQtMjUuNzc0Yy0zLjIyNi0zLjIyNi0zLjIyNi04LjQ1MiwwLTExLjY3Nw0KCUMzMzQuMzU1LDE4Mi40ODcsMzM2LjQ2OCwxODEuNjgsMzM4LjU4MSwxODEuNjh6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojNUQ1MzYwOyIgZD0iTTM5MC41NDgsMjA0LjAzNWwxMS42NzcsMTEuNjc3YzMuMTk1LDMuMTk3LDcuMTI3LDUuMzQsMTEuNDAzLDYuMzk0DQoJYzIuMjk5LDAuNTY3LDQuMTI5LDIuMzE1LDUuMTg4LDQuNDMzbDguNjg4LDE3LjM3NWMxLjE4NCwyLjM2OSwxLjAwOSw1LjE5LTAuNDYsNy4zOTNsLTEyLjEyNCwxOC4xODcNCgljLTEuMjcxLDEuOTA3LTEuNTg0LDQuMjk2LTAuODQ3LDYuNDY2bDQuMTk4LDEyLjM2YzEuMDgsMy4xOC0wLjExOCw2LjY4NC0yLjkyMyw4LjUzMmMtNS45MzEsMy45MDctMTUuMjgyLDEwLjA4Ni0xNS4yODIsMTAuMDg2DQoJYy0zLjc5OCwyLjUyOC00LjgyMyw3LjY1Ny0yLjI5LDExLjQ1MmMyLjUzMiwzLjgwMiw3LjY1Myw0LjgzNSwxMS40NTIsMi4yOWwxOC41MzItMTIuMzU1YzIuNzEzLTEuODA5LDUuOTAxLTIuNzc0LDkuMTYzLTIuNzc0DQoJaDY2LjgyMWM0LjU2MSwwLDguMjU4LTMuNjk3LDguMjU4LTguMjU4di04Mi41ODFjMC00LjU2MS0zLjY5Ny04LjI1OC04LjI1OC04LjI1OGgtODRjLTIuMTg5LDAtNC4yODktMC44Ny01LjgzNy0yLjQxOA0KCWwtMTEuNjc5LTExLjY3OWMtMS42MTMtMS42MTMtMy43MjYtMi40MTktNS44MzktMi40MTljLTIuMTEzLDAtNC4yMjYsMC44MDYtNS44MzksMi40MTkNCglDMzg3LjMyMywxOTUuNTgzLDM4Ny4zMjMsMjAwLjgwOSwzOTAuNTQ4LDIwNC4wMzV6Ii8+DQo8Zz4NCgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNFQkM5QTA7IiBjeD0iMzMwLjMyIiBjeT0iMzEzLjgxMSIgcj0iOC4yNTgiLz4NCgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNFQkM5QTA7IiBjeD0iMzM4LjU4IiBjeT0iMTg5Ljk0MSIgcj0iOC4yNTgiLz4NCgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNFQkM5QTA7IiBjeD0iMzA1LjU1IiBjeT0iMjMxLjIzMSIgcj0iOC4yNTgiLz4NCjwvZz4NCjxwYXRoIHN0eWxlPSJmaWxsOiM0QjNGNEU7IiBkPSJNNDEzLjc4NCwyNzIuNTE5Yy0wLjE2OCwxLjE0My0wLjA5NCwyLjMxOSwwLjI4OCwzLjQ0Mmw0LjE5OCwxMi4zNg0KCWMxLjA4LDMuMTgtMC4xMTksNi42ODQtMi45MjMsOC41MzJjLTUuOTMsMy45MDctMTUuMjgyLDEwLjA4Ni0xNS4yODIsMTAuMDg2Yy0zLjc5OCwyLjUyOC00LjgyMyw3LjY1Ny0yLjI5LDExLjQ1Mg0KCWMyLjUzMiwzLjgwMiw3LjY1Myw0LjgzNSwxMS40NTIsMi4yOWwxOC41MzItMTIuMzU1YzIuNzE0LTEuODA5LDUuOTAxLTIuNzc0LDkuMTYyLTIuNzc0aDY2LjgyMmM0LjU2LDAsOC4yNTgtMy42OTgsOC4yNTgtOC4yNTgNCglWMjcyLjUyaC05OC4yMTdWMjcyLjUxOXoiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" />
-
-                </div>
-
                 <div>
                     <div class="jumbotron">
                         <label for="compañia">Selecciona la compañia</label>
@@ -52,11 +36,11 @@
                             <select class="form-control" id="compañia">    
                                 <option disabled selected>Selecciona una compañia</option>                            
                                 <option value="1">Telefónica</option>
-                                <option value="1">Movistar</option>
-                                <option value="1">Jazztel</option>
-                                <option value="1">Masmovil</option>
-                                <option value="1">Vodafone</option>
-                                <option value="0">Orange</option>                                
+                                <option value="2">Movistar</option>
+                                <option value="3">Jazztel</option>
+                                <option value="4">Masmovil</option>
+                                <option value="5">Vodafone</option>
+                                <option value="6">Orange</option>                                
                             </select>
                         </div>
 
@@ -85,12 +69,12 @@
                             <input id="numero" type="number" class="form-control" placeholder="Numero de cable"
                                 aria-label="Numero de cable">
                         </div>
-
-                        <button id="buscar" class="acciones btn btn-primary d-block" type="button"><i
+                        <div class="btn-group" role="group">
+                        <button id="buscar" class="acciones btn btn-primary" type="button"><i
                                 class="fas fa-search"></i></button>
-                        <button id="borrar" class="acciones btn btn-danger d-block" type="button"><i
+                        <button id="borrar" class="acciones btn btn-danger" type="button"><i
                                 class="far fa-trash-alt"></i></button>
-
+                        </div>
                         <div id="resultados"></div>
 
                     </div>

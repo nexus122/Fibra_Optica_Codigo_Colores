@@ -1,3 +1,11 @@
+:root {    
+    --primary: #ffb300!important;
+    --error: #d81b60!important;
+    --primary-hover: #fbc02d!important;
+    --primary-focus: rgba(253, 216, 53, 0.125)!important;
+    --primary-inverse: rgba(0, 0, 0, 0.75)!important;
+  }
+
 .minh-100 {
     height: 100vh;
 }
@@ -10,7 +18,6 @@
 body {
     font-family: Verdana, Geneva, sans-serif;
     font-size: 18px;
-    background-color: #CCC;
 }
 
 .float {
@@ -36,7 +43,14 @@ a.float:hover {
 
 button.acciones {
     display: block;
+}
+.btn-group{
     width: 100%;
+    margin-top: 1em;
+    padding: 1em;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
 }
 
 .company {
@@ -59,4 +73,35 @@ button.acciones {
 
 .row.marcas {
     margin-bottom: 1em;
+}
+
+article {
+    border-bottom: 1px solid black;
+    padding: 1em;
+}
+
+.badge {
+    background: #007bff;
+    padding: 0.2em;
+    border-radius: 30px;
+}
+
+.jumbotron {
+    width: 80vw;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-danger{
+    color: var(--error);
+}
+
+.btn-danger{    
+    background-color: var(--error);
+    border: var(--error);
 }
