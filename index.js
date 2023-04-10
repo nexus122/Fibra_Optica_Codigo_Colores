@@ -1,5 +1,5 @@
 /* Tipos de cable */
-var cableInfo = [
+let cableInfo = [
   [32, 4, 8, 0],
   [48, 6, 8, 1],
   [64, 8, 8, 2],
@@ -11,7 +11,7 @@ var cableInfo = [
   [288, 18, 16, 8],
 ];
 
-var cables = [
+let cables = [
   "32 F.O PKP",
   "48 F.O PKP",
   "64 F.O PKP",
@@ -24,7 +24,7 @@ var cables = [
 ];
 
 /* En ingles para el color */
-var tubeColorInfo = [
+let tubeColorInfo = [
   ["white", "red", "blue", "green"], // 32
   ["white", "white", "red", "red", "blue", "blue"], // 48
   ["white", "white", "red", "red", "blue", "blue", "green", "green"], // 64
@@ -138,7 +138,7 @@ var tubeColorInfo = [
   ], // 288 F.O Francia
 ];
 
-var fibraColorInfo = [
+let fibraColorInfo = [
   ["green", "red", "blue", "yellow", "grey", "purple", "brown", "orange"], // 32
   ["green", "red", "blue", "yellow", "grey", "purple", "brown", "orange"], // 48
   ["green", "red", "blue", "yellow", "grey", "purple", "brown", "orange"], // 64
@@ -218,7 +218,7 @@ var fibraColorInfo = [
 ];
 
 /* En español para las frases */
-var espTubeColorInfo = [
+let espTubeColorInfo = [
   ["Blanco", "Rojo", "Azul", "Verde"], // 32
   ["Blanco", "Blanco", "Rojo", "Rojo", "Azul", "Azul"], // 48
   ["Blanco", "Blanco", "Rojo", "Rojo", "Azul", "Azul", "Verde", "Verde"], // 64
@@ -332,7 +332,7 @@ var espTubeColorInfo = [
   ], // 288 Francia
 ];
 
-var espFibraColorInfo = [
+let espFibraColorInfo = [
   ["Verde", "Rojo", "Azul", "Amarillo", "Gris", "Violeta", "Marron", "Naranja"], // 32
   ["Verde", "Rojo", "Azul", "Amarillo", "Gris", "Violeta", "Marron", "Naranja"], // 48
   ["Verde", "Rojo", "Azul", "Amarillo", "Gris", "Violeta", "Marron", "Naranja"], // 64
@@ -415,21 +415,20 @@ var espFibraColorInfo = [
 
 // Funcion para crear las tablas
 function CreateTable(cableInfo) {
-  var cable = cableInfo[0];
+  let cable = cableInfo[0];
   fibras = cableInfo[1];
   tubos = cableInfo[2];
-  console.log(`Cable: ${cable}, fibras: ${fibras} Tubo: ${tubos}`);
-  var arrTemp = [];
+  let arrTemp = [];
   arrTubo = [];
 
   /* Bucle para llenar la array con todos los numeros */
-  for (var i = 0; i < fibras * tubos; i++) {
-    var aux = i + 1;
+  for (let i = 0; i < fibras * tubos; i++) {
+    let aux = i + 1;
     arrTemp.push(aux);
   }
 
   /* Bucle para poder partir el array y construir las columnas */
-  var division = tubos;
+  let division = tubos;
 
   for (let i = 0; i < arrTemp.length; i += division) {
     let pedazo = arrTemp.slice(i, i + division);
@@ -440,17 +439,11 @@ function CreateTable(cableInfo) {
 }
 
 function search(table, numero, cableInfo) {
-  var color = cableInfo[3];
-  console.log("Color: ", color);
-  var result = [];
+  let color = cableInfo[3];
+  let result = [];
   table.forEach((element, index) => {
-    var position = element.indexOf(parseInt(numero));
+    let position = element.indexOf(parseInt(numero));
     if (position != -1) {
-      console.log(
-        `Tubo: ${index + 1} Color: ${tubeColorInfo[color][index]} Fibra: ${
-          position + 1
-        } Color: ${fibraColorInfo[color][position]}`
-      );
       result = [
         index + 1,
         tubeColorInfo[color][index],
@@ -465,8 +458,8 @@ function search(table, numero, cableInfo) {
 }
 
 function dibujar(result, numero, cable) {
-  var d = new Date();
-  var n = d.getTime();
+  let d = new Date();
+  let n = d.getTime();
   $("#resultados").append(`
     <article>
       <h3 class="cable">Cable: <b>${cables[cable]}</b> Numero: <b>${numero}</b></h3>
@@ -478,15 +471,15 @@ function dibujar(result, numero, cable) {
 }
 
 function generarMarcas(tipoCable, result, n) {
-  var company = $("#compañia").val();
+  let numero = $("#numero").val();
+  let company = $("#compañia").val();
   if (tipoCable == "256 F.O PKP") {
-    if (parseInt(result[3]) >= 13) {
+    if (parseInt(numero) >= 13) {
       $(".marca_" + n).append(
         `<span class="badge badge-primary"> Primero __/</span>`
       );
     }
   }
-
   if (tipoCable == "512 F.O PKP") {
     if (parseInt(result[3]) >= 9 && result[3] < 17) {
       $(".marca_" + n).append(
@@ -515,9 +508,8 @@ function generarMarcas(tipoCable, result, n) {
       article.querySelector(".tubo").setHTML(text);
     }
   }
-
   if (tipoCable == "144 F.O Francia") {
-    if (parseInt(result[3]) >= 97) {
+    if (parseInt(numero) >= 97) {
       $(".marca_" + n).append(
         `<span class="badge badge-primary">Primero /</span>`
       );
@@ -525,7 +517,7 @@ function generarMarcas(tipoCable, result, n) {
   }
 
   if (tipoCable == "288 F.O Francia") {
-    if (parseInt(result[3]) >= 193) {
+    if (parseInt(numero) >= 193) {
       $(".marca_" + n).append(
         `<span class="badge badge-primary">Primero /</span>`
       );
@@ -543,11 +535,9 @@ function error(mensaje) {
 
 /* Evento click para buscar */
 $("#buscar").click(async function () {
-  var cable = $("#cableSelect").val();
-  var numero = $("#numero").val();
-  var company = $("#compañia").val();
-
-  console.log(company);
+  let cable = $("#cableSelect").val();
+  let numero = $("#numero").val();
+  let company = $("#compañia").val();
 
   if (company == "" || company == null) {
     error("Debes elegir una compañia");
@@ -560,10 +550,9 @@ $("#buscar").click(async function () {
   } else {
     $(".alert-danger").remove();
     /* Llamamos a las funciones */
-    var table = CreateTable(cableInfo[cable]);
+    let table = CreateTable(cableInfo[cable]);
 
-    var result = search(table, numero, cableInfo[cable]);
-    console.log(result);
+    let result = search(table, numero, cableInfo[cable]);
     dibujar(result, numero, cable);
   }
 });
