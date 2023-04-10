@@ -1,0 +1,307 @@
+[
+  {
+    "name": "32 F.O PKP",
+    "cableInfo": {
+      "fibers": 32,
+      "tubes": 4,
+      "tubeColors": ["white", "red", "blue", "green"],
+      "fiberColors": [
+        "green",
+        "red",
+        "blue",
+        "yellow",
+        "grey",
+        "purple",
+        "brown",
+        "orange"
+      ]
+    }
+  },
+  {
+    "name": "48 F.O PKP",
+    "cableInfo": {
+      "fibers": 48,
+      "tubes": 6,
+      "tubeColors": ["white", "white", "red", "red", "blue", "blue"],
+      "fiberColors": [
+        "green",
+        "red",
+        "blue",
+        "yellow",
+        "grey",
+        "purple",
+        "brown",
+        "orange"
+      ]
+    }
+  },
+  {
+    "name": "64 F.O PKP",
+    "cableInfo": {
+      "fibers": 64,
+      "tubes": 8,
+      "tubeColors": [
+        "white",
+        "white",
+        "red",
+        "red",
+        "blue",
+        "blue",
+        "green",
+        "green"
+      ],
+      "fiberColors": [
+        "green",
+        "red",
+        "blue",
+        "yellow",
+        "grey",
+        "purple",
+        "brown",
+        "orange"
+      ]
+    }
+  },
+  {
+    "name": "96 F.O PKP",
+    "cableInfo": {
+      "fibers": 96,
+      "tubes": 12,
+      "tubeColors": [
+        "white",
+        "white",
+        "white",
+        "white",
+        "red",
+        "red",
+        "red",
+        "red",
+        "blue",
+        "blue",
+        "blue",
+        "blue"
+      ],
+      "fiberColors": [
+        "green",
+        "red",
+        "blue",
+        "yellow",
+        "grey",
+        "purple",
+        "brown",
+        "orange"
+      ]
+    }
+  },
+  {
+    "name": "128 F.O PKP",
+    "cableInfo": {
+      "fibers": 128,
+      "tubes": 16,
+      "tubeColors": [
+        "white",
+        "white",
+        "white",
+        "white",
+        "red",
+        "red",
+        "red",
+        "red",
+        "blue",
+        "blue",
+        "blue",
+        "blue",
+        "green",
+        "green",
+        "green",
+        "green"
+      ],
+      "fiberColors": [
+        "green",
+        "red",
+        "blue",
+        "yellow",
+        "grey",
+        "purple",
+        "brown",
+        "orange"
+      ]
+    }
+  },
+  {
+    "name": "256 F.O PKP",
+    "cableInfo": {
+      "fibers": 256,
+      "tubes": 32,
+      "tubeColors": [
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+        "red",
+        "red",
+        "red",
+        "red",
+        "red",
+        "red",
+        "red",
+        "red",
+        "blue",
+        "blue",
+        "blue",
+        "blue",
+        "blue",
+        "blue",
+        "blue",
+        "blue",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green",
+        "green"
+      ],
+      "fiberColors": [
+        "green",
+        "red",
+        "blue",
+        "yellow",
+        "grey",
+        "purple",
+        "brown",
+        "orange"
+      ]
+    }
+  },
+  {
+    "name": "512 F.O PKP",
+    "cableInfo": {
+      "fibers": 512,
+      "tubes": 64,
+      "tubeColors": [
+        "white",
+        "white",
+        "white",
+        "white",
+        "red",
+        "red",
+        "red",
+        "red",
+        "blue",
+        "blue",
+        "blue",
+        "blue",
+        "green",
+        "green",
+        "green",
+        "green",
+        "yellow",
+        "yellow",
+        "yellow",
+        "yellow",
+        "orange",
+        "orange",
+        "orange",
+        "orange",
+        "brown",
+        "brown",
+        "brown",
+        "brown",
+        "purple",
+        "purple",
+        "purple",
+        "purple"
+      ],
+      "fiberColors": [
+        "green",
+        "red",
+        "blue",
+        "yellow",
+        "grey",
+        "purple",
+        "brown",
+        "orange"
+      ]
+    }
+  },
+  {
+    "name": "144 F.O Francia",
+    "cableInfo": {
+      "fibers": 144,
+      "tubes": 12,
+      "tubeColors": [
+        "white",
+        "white",
+        "white",
+        "white",
+        "red",
+        "red",
+        "blue",
+        "blue",
+        "green",
+        "green",
+        "yellow",
+        "yellow"
+      ],
+      "fiberColors": [
+        "green",
+        "red",
+        "blue",
+        "yellow",
+        "grey",
+        "purple",
+        "brown",
+        "orange"
+      ]
+    }
+  },
+  {
+    "name": "288 F.O Francia",
+    "cableInfo": {
+      "fibers": 288,
+      "tubes": 24,
+      "tubeColors": [
+        "white",
+        "white",
+        "white",
+        "white",
+        "red",
+        "red",
+        "red",
+        "red",
+        "blue",
+        "blue",
+        "blue",
+        "blue",
+        "green",
+        "green",
+        "green",
+        "green",
+        "yellow",
+        "yellow",
+        "yellow",
+        "yellow",
+        "orange",
+        "orange",
+        "orange",
+        "orange"
+      ],
+      "fiberColors": [
+        "green",
+        "red",
+        "blue",
+        "yellow",
+        "grey",
+        "purple",
+        "brown",
+        "orange"
+      ]
+    }
+  }
+]
