@@ -460,7 +460,7 @@ function search(table, numero, cableInfo) {
 function dibujar(result, numero, cable) {
   let d = new Date();
   let n = d.getTime();
-  $("#resultados").append(`
+  $("#resultados").prepend(`
     <article>
       <h3 class="cable">Cable: <b>${cables[cable]}</b></h3>
       <h3 class="tubo"> <span class="marca_${n}"></span> Tubo <b>${result[0]}</b> Color <i class="fas fa-square-full" style="color:${result[1]}"></i> ${result[2]}</h3>
