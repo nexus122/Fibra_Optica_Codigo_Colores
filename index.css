@@ -105,3 +105,8 @@ article {
     background-color: var(--error);
     border: var(--error);
 }
+
+i.fas.fa-square-full {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
