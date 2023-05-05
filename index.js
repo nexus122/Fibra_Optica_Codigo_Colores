@@ -18,6 +18,7 @@ class app {
   async init() {
     this.ObtainData();
     this.HtmlInteractions();
+    this.companySelected = this.companySelect.value;
   }
 
   async ObtainData() {
@@ -30,6 +31,7 @@ class app {
   HtmlInteractions() {
     // Escuchar el valor de la compañia
     this.companySelect.addEventListener("change", (event) => {
+      console.log(event.target.value);
       this.companySelected = event.target.value; // Guardamos el valor seleccionado en la variable
       this.countryFilter();
     });
@@ -71,77 +73,95 @@ class app {
       (element) => element.name == this.cableSelected
     );
 
-    const firstLength = data.cableInfo.fibers / data.cableInfo.tubes;
-    const arrTable = Array.from(
-      { length: firstLength },
-      (_, i) => data.cableInfo.fiberColors[i % 8]
-    ).flatMap((colors) => Array(data.cableInfo.tubes).fill(colors));
+    console.log("data: ", data);
 
-    const tubeNumber = Math.ceil(this.numeroSelected / firstLength);
-    const fiberColor = arrTable[this.numeroSelected - 1];
+    const firstLength = data.cableInfo.fibers / data.cableInfo.tubes;
+    console.log("firstLength: ", firstLength);
+
+    const arrTable = [];
+
+    data.cableInfo.tubeColors.forEach(() => {
+      arrTable.push(data.cableInfo.fiberColors);
+    });
+    console.log("arrTable:", arrTable);
+
+    let aux = 0;
+    let tubeNumber, fiberColor;
+
+    arrTable.forEach((tube, index) => {
+      console.log("Tube: ", index);
+      tube.forEach((fiber) => {
+        console.log("Fiber: ", fiber);
+        aux++;
+        if (aux == this.numeroSelected) {
+          console.log("ENTRA AQUI");
+          tubeNumber = index;
+          fiberColor = fiber;
+        }
+      });
+    });
 
     return [
       this.numeroSelected,
-      data.cableInfo.tubeColors[tubeNumber - 1],
+      data.cableInfo.tubeColors[tubeNumber],
       fiberColor,
+      tubeNumber + 1,
     ];
   }
 
   drawResults(results) {
-    this.resultPanel.innerHTML += `
+    this.resultPanel.innerHTML = `
       <article>
-      <h1>${this.companySelected} - ${this.cableSelected} - ${results[0]}</h1>
-        <h3 class="tubo"><b>Tubo</b> <i style="color:${results[1]}"class="fa-sharp fa-solid fa-square"></i></h3>
-        <h3 class="fibra"><b>Fibra</b> <i style="color:${results[2]}"class="fa-sharp fa-solid fa-square"></i></h3>
+      <h1>${this.companySelected} - ${this.cableSelected}</h1>
+        <h3 class="tubo"><b>Tubo</b> ${results[3]} - ${results[1]} <i style="color:${results[1]}"class="fa-sharp fa-solid fa-square"></i></h3>
+        <h3 class="fibra"><b>Fibra ${results[0]}</b> - ${results[2]} <i style="color:${results[2]}"class="fa-sharp fa-solid fa-square"></i></h3>
       </article>
+      ${this.resultPanel.innerHTML}
     `;
     generarMarcas(this.cableSelected);
   }
 }
 
 function generarMarcas(tipoCable) {
-  console.log("Entra");
-
   let numero = $("#numero").val();
-  let n = document.querySelectorAll("article .tubo").length;
-  let lastArticle = document.querySelectorAll("article .tubo")[n - 1];
+  let firstArticle = document.querySelectorAll("article .fibra")[0];
 
   if (tipoCable == "256 F.O PKP") {
     if (parseInt(numero) >= 13) {
       let span = document.createElement("span");
       span.className = "badge";
-      lastArticle.append(span);
+      firstArticle.append(span);
       span.append(`Primero __/`);
     }
   } else if (tipoCable == "512 F.O PKP") {
     if (parseInt(numero) >= 9 && numero < 17) {
       let span = document.createElement("span");
       span.className = "badge";
-      lastArticle.append(span);
+      firstArticle.append(span);
       span.append(`Primero /`);
     } else if (parseInt(numero) >= 17 && numero < 25) {
       let span = document.createElement("span");
       span.className = "badge";
-      lastArticle.append(span);
+      firstArticle.append(span);
       span.append(`Segundo / /`);
     } else if (parseInt(numero) >= 25) {
       let span = document.createElement("span");
       span.className = "badge";
-      lastArticle.append(span);
+      firstArticle.append(span);
       span.append(`Tercero / / /`);
     }
   } else if (tipoCable == "144 F.O Francia") {
     if (parseInt(numero) >= 97) {
       let span = document.createElement("span");
       span.className = "badge";
-      lastArticle.append(span);
+      firstArticle.append(span);
       span.append(`Primero /`);
     }
-  } else if (tipoCable == "288 F.O Francia") {
+  } else if (tipoCable == "288 F.O Francia 18 tubos") {
     if (parseInt(numero) >= 193) {
       let span = document.createElement("span");
       span.className = "badge";
-      lastArticle.append(span);
+      firstArticle.append(span);
       span.append(`Primero /`);
     }
   }
@@ -149,3 +169,9 @@ function generarMarcas(tipoCable) {
 
 const myApp = new app();
 myApp.init();
+
+function SearchColors(number) {
+  results.forEach((tube, index) => {
+    console.log(tube);
+  });
+}
