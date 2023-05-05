@@ -66,27 +66,15 @@ class app {
     }
   }
 
-  searchData() {
-    if (!this.cableSelected || !this.numeroSelected) return;
+  filterData() {
+    return this.data.find((element) => element.name == this.cableSelected);
+  }
 
-    const data = this.data.find(
-      (element) => element.name == this.cableSelected
-    );
-
-    console.log("data: ", data);
-
-    const firstLength = data.cableInfo.fibers / data.cableInfo.tubes;
-    console.log("firstLength: ", firstLength);
-
-    const arrTable = [];
-
-    data.cableInfo.tubeColors.forEach(() => {
-      arrTable.push(data.cableInfo.fiberColors);
-    });
-    console.log("arrTable:", arrTable);
-
+  searchFibraInfo(data) {
     let aux = 0;
     let tubeNumber, fiberColor;
+
+    const arrTable = this.constructTable(data);
 
     arrTable.forEach((tube, index) => {
       console.log("Tube: ", index);
@@ -101,6 +89,45 @@ class app {
       });
     });
 
+    return fiberColor;
+  }
+
+  searchTubeInfo(data) {
+    let aux = 0;
+    let tubeNumber, fiberColor;
+
+    const arrTable = this.constructTable(data);
+
+    arrTable.forEach((tube, index) => {
+      console.log("Tube: ", index);
+      tube.forEach((fiber) => {
+        console.log("Fiber: ", fiber);
+        aux++;
+        if (aux == this.numeroSelected) {
+          console.log("ENTRA AQUI");
+          tubeNumber = index;
+          fiberColor = fiber;
+        }
+      });
+    });
+
+    return tubeNumber;
+  }
+
+  constructTable(data) {
+    const arrTable = [];
+    data.cableInfo.tubeColors.forEach(() => {
+      arrTable.push(data.cableInfo.fiberColors);
+    });
+    return arrTable;
+  }
+
+  searchData() {
+    if (!this.cableSelected || !this.numeroSelected) return;
+    const data = this.filterData();
+    let tubeNumber = this.searchTubeInfo(data);
+    let fiberColor = this.searchFibraInfo(data);
+
     return [
       this.numeroSelected,
       data.cableInfo.tubeColors[tubeNumber],
@@ -108,6 +135,10 @@ class app {
       tubeNumber + 1,
     ];
   }
+
+  searchFibreColor() {}
+
+  searchTubeColor() {}
 
   drawResults(results) {
     this.resultPanel.innerHTML = `
