@@ -69,46 +69,48 @@ class app {
     return this.data.find((element) => element.name == this.cableSelected);
   }
 
-  searchFibraInfo() {
+  searchFibraInfo(number) {
     let aux = 0;
-    let fiberColor;
+    let fiberColor, fiberPosition;
 
     const arrTable = this.constructTable();
 
-    arrTable.forEach((tube, index) => {
-      console.log("Tube: ", index);
-      tube.forEach((fiber) => {
-        console.log("Fiber: ", fiber);
+    arrTable.forEach((tube) => {
+      tube.forEach((fiber, index) => {
         aux++;
-        if (aux == this.numeroSelected) {
-          console.log("ENTRA AQUI");
+        if (aux == number) {
+          fiberPosition = index + 1;
           fiberColor = fiber;
         }
       });
     });
 
-    return fiberColor;
+    return {
+      fiberColor: fiberColor,
+      fiberNumber: this.numeroSelected,
+      fiberPosition: fiberPosition,
+    };
   }
 
-  searchTubeInfo() {
+  searchTubeInfo(number) {
     let aux = 0;
     let tubeNumber;
 
     const arrTable = this.constructTable();
 
     arrTable.forEach((tube, index) => {
-      console.log("Tube: ", index);
-      tube.forEach((fiber) => {
-        console.log("Fiber: ", fiber);
+      tube.forEach(() => {
         aux++;
-        if (aux == this.numeroSelected) {
-          console.log("ENTRA AQUI");
+        if (aux == number) {
           tubeNumber = index;
         }
       });
     });
 
-    return tubeNumber;
+    return {
+      tubeNumber: tubeNumber,
+      tubeColors: this.currentData.cableInfo.tubeColors[tubeNumber],
+    };
   }
 
   constructTable() {
@@ -122,20 +124,14 @@ class app {
   searchData() {
     if (!this.cableSelected || !this.numeroSelected) return;
     this.currentData = this.filterData();
-    let tubeNumber = this.searchTubeInfo();
-    let fiberColor = this.searchFibraInfo();
+    let tubeNumber = this.searchTubeInfo(this.numeroSelected).tubeNumber;
+    let tubeColors = this.searchTubeInfo(this.numeroSelected).tubeColors;
+    let fiberNumber = this.searchFibraInfo(this.numeroSelected).fiberNumber;
+    let fiberColor = this.searchFibraInfo(this.numeroSelected).fiberColor;
+    let fiberPosition = this.searchFibraInfo(this.numeroSelected).fiberPosition;
 
-    return [
-      this.numeroSelected,
-      this.currentData.cableInfo.tubeColors[tubeNumber],
-      fiberColor,
-      tubeNumber + 1,
-    ];
+    return [fiberNumber, tubeColors, fiberColor, tubeNumber + 1, fiberPosition];
   }
-
-  searchFibreColor() {}
-
-  searchTubeColor() {}
 
   drawResults(results) {
     this.resultPanel.innerHTML = `
@@ -146,60 +142,48 @@ class app {
       </article>
       ${this.resultPanel.innerHTML}
     `;
-    generarMarcas(this.cableSelected);
+    this.generarMarcas(this.cableSelected, results[4]);
   }
-}
 
-function generarMarcas(tipoCable) {
-  let numero = $("#numero").val();
-  let firstArticle = document.querySelectorAll("article .fibra")[0];
+  drawMark(donde, mensaje) {
+    let span = document.createElement("span");
+    span.className = "badge";
+    donde.append(span);
+    span.append(mensaje);
+  }
 
-  if (tipoCable == "256 F.O PKP") {
-    if (parseInt(numero) >= 13) {
-      let span = document.createElement("span");
-      span.className = "badge";
-      firstArticle.append(span);
-      span.append(`Primero __/`);
-    }
-  } else if (tipoCable == "512 F.O PKP") {
-    if (parseInt(numero) >= 9 && numero < 17) {
-      let span = document.createElement("span");
-      span.className = "badge";
-      firstArticle.append(span);
-      span.append(`Primero /`);
-    } else if (parseInt(numero) >= 17 && numero < 25) {
-      let span = document.createElement("span");
-      span.className = "badge";
-      firstArticle.append(span);
-      span.append(`Segundo / /`);
-    } else if (parseInt(numero) >= 25) {
-      let span = document.createElement("span");
-      span.className = "badge";
-      firstArticle.append(span);
-      span.append(`Tercero / / /`);
-    }
-  } else if (tipoCable == "144 F.O Francia") {
-    if (parseInt(numero) >= 97) {
-      let span = document.createElement("span");
-      span.className = "badge";
-      firstArticle.append(span);
-      span.append(`Primero /`);
-    }
-  } else if (tipoCable == "288 F.O Francia 18 tubos") {
-    if (parseInt(numero) >= 193) {
-      let span = document.createElement("span");
-      span.className = "badge";
-      firstArticle.append(span);
-      span.append(`Primero /`);
+  generarMarcas(tipoCable, fiberPosition) {
+    let numero = this.numeroSelected;
+    let firstArticle = document.querySelectorAll("article .fibra")[0];
+
+    console.log("tipoCable: ", tipoCable);
+    console.log("fiberPosition: ", fiberPosition);
+
+    // this.drawMark(firstArticle, `Primero /`);
+    // this.drawMark(firstArticle, `Segundo / /`);
+    // this.drawMark(firstArticle, `Tercero / / /`);
+
+    if (tipoCable == "256 F.O PKP") {
+      if (fiberPosition >= 13) {
+        this.drawMark(firstArticle, `Pintas /`);
+      }
+    } else if (tipoCable == "512 F.O PKP") {
+      if (fiberPosition >= 9 && fiberPosition < 16) {
+        this.drawMark(firstArticle, `Pintas /`);
+      } else if (fiberPosition >= 16 && fiberPosition < 25) {
+        this.drawMark(firstArticle, `Pintas / /`);
+      } else if (fiberPosition >= 25) {
+        this.drawMark(firstArticle, `Pintas / / /`);
+      }
+    } else if (tipoCable == "144 F.O Francia") {
+    } else if (tipoCable == "288 F.O Francia 18 tubos") {
+      if (fiberPosition >= 13) {
+        this.drawMark(firstArticle, `Pintas /`);
+      }
+    } else if (tipoCable == "288 F.O Francia 24 tubos") {
     }
   }
 }
 
 const myApp = new app();
 myApp.init();
-
-function SearchColors(number) {
-  results.forEach((tube, index) => {
-    console.log(tube);
-  });
-}
