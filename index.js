@@ -11,6 +11,7 @@ class app {
   resultPanel = document.querySelector("#resultados");
   // Vars and data
   data = [];
+  currentData = [];
   companySelected;
   cableSelected;
   numeroSelected;
@@ -25,13 +26,11 @@ class app {
     const infoResponse = await fetch("./data.json");
     const cableInfo = await infoResponse.json();
     this.data = cableInfo;
-    console.log(this.data);
   }
 
   HtmlInteractions() {
     // Escuchar el valor de la compañia
     this.companySelect.addEventListener("change", (event) => {
-      console.log(event.target.value);
       this.companySelected = event.target.value; // Guardamos el valor seleccionado en la variable
       this.countryFilter();
     });
@@ -70,11 +69,11 @@ class app {
     return this.data.find((element) => element.name == this.cableSelected);
   }
 
-  searchFibraInfo(data) {
+  searchFibraInfo() {
     let aux = 0;
-    let tubeNumber, fiberColor;
+    let fiberColor;
 
-    const arrTable = this.constructTable(data);
+    const arrTable = this.constructTable();
 
     arrTable.forEach((tube, index) => {
       console.log("Tube: ", index);
@@ -83,7 +82,6 @@ class app {
         aux++;
         if (aux == this.numeroSelected) {
           console.log("ENTRA AQUI");
-          tubeNumber = index;
           fiberColor = fiber;
         }
       });
@@ -92,11 +90,11 @@ class app {
     return fiberColor;
   }
 
-  searchTubeInfo(data) {
+  searchTubeInfo() {
     let aux = 0;
-    let tubeNumber, fiberColor;
+    let tubeNumber;
 
-    const arrTable = this.constructTable(data);
+    const arrTable = this.constructTable();
 
     arrTable.forEach((tube, index) => {
       console.log("Tube: ", index);
@@ -106,7 +104,6 @@ class app {
         if (aux == this.numeroSelected) {
           console.log("ENTRA AQUI");
           tubeNumber = index;
-          fiberColor = fiber;
         }
       });
     });
@@ -114,23 +111,23 @@ class app {
     return tubeNumber;
   }
 
-  constructTable(data) {
+  constructTable() {
     const arrTable = [];
-    data.cableInfo.tubeColors.forEach(() => {
-      arrTable.push(data.cableInfo.fiberColors);
+    this.currentData.cableInfo.tubeColors.forEach(() => {
+      arrTable.push(this.currentData.cableInfo.fiberColors);
     });
     return arrTable;
   }
 
   searchData() {
     if (!this.cableSelected || !this.numeroSelected) return;
-    const data = this.filterData();
-    let tubeNumber = this.searchTubeInfo(data);
-    let fiberColor = this.searchFibraInfo(data);
+    this.currentData = this.filterData();
+    let tubeNumber = this.searchTubeInfo();
+    let fiberColor = this.searchFibraInfo();
 
     return [
       this.numeroSelected,
-      data.cableInfo.tubeColors[tubeNumber],
+      this.currentData.cableInfo.tubeColors[tubeNumber],
       fiberColor,
       tubeNumber + 1,
     ];

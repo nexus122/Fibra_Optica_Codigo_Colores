@@ -236,28 +236,34 @@
       "fibers": 144,
       "tubes": 12,
       "tubeColors": [
-        "white",
-        "white",
-        "white",
-        "white",
-        "red",
         "red",
         "blue",
-        "blue",
-        "green",
         "green",
         "yellow",
-        "yellow"
+        "purple",
+        "white",
+        "orange",
+        "grey",
+        "brown",
+        "black",
+        "cyan",
+        "pink",
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "white"
       ],
       "fiberColors": [
-        "green",
         "red",
         "blue",
+        "green",
         "yellow",
-        "grey",
         "purple",
-        "brown",
-        "orange"
+        "white",
+        "orange",
+        "grey"
       ]
     }
   },
