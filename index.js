@@ -181,9 +181,9 @@ class app {
         this.drawMark(firstArticle, `/`);
       }
     } else if (tipoCable == "512 F.O PKP") {
-      if (fiberPosition >= 9 && fiberPosition < 16) {
+      if (fiberPosition >= 9 && fiberPosition <= 16) {
         this.drawMark(firstArticle, `/`);
-      } else if (fiberPosition >= 16 && fiberPosition < 25) {
+      } else if (fiberPosition >= 17 && fiberPosition <= 24) {
         this.drawMark(firstArticle, `//`);
       } else if (fiberPosition >= 25) {
         this.drawMark(firstArticle, `///`);
@@ -201,23 +201,23 @@ class app {
 
     if (tipoCable == "48 F.O PKP") {
       if (tubeNumber == 3 || tubeNumber == 5) {
-        this.drawMark(firstArticle, `>/ /`);
+        this.drawMark(firstArticle, `º`);
       } else if (tubeNumber == 4 || tubeNumber == 6) {
-        this.drawMark(firstArticle, `/ >/`);
+        this.drawMark(firstArticle, `ºº`);
       }
     } else if (tipoCable == "64 F.O PKP") {
       if (tubeNumber == 3 || tubeNumber == 5 || tubeNumber == 7) {
-        this.drawMark(firstArticle, `>/ /`);
+        this.drawMark(firstArticle, `º`);
       } else if (tubeNumber == 4 || tubeNumber == 6 || tubeNumber == 8) {
-        this.drawMark(firstArticle, `/ >/`);
+        this.drawMark(firstArticle, `ºº`);
       }
     } else if (tipoCable == "96 F.O PKP") {
       if (tubeNumber == 4 || tubeNumber == 7 || tubeNumber == 10) {
-        this.drawMark(firstArticle, `>/ / /`);
+        this.drawMark(firstArticle, `º`);
       } else if (tubeNumber == 5 || tubeNumber == 8 || tubeNumber == 11) {
-        this.drawMark(firstArticle, `/ >/ /`);
+        this.drawMark(firstArticle, `ºº`);
       } else if (tubeNumber == 6 || tubeNumber == 9 || tubeNumber == 12) {
-        this.drawMark(firstArticle, `/ / >/`);
+        this.drawMark(firstArticle, `ººº`);
       }
     } else if (
       tipoCable == "128 F.O PKP" ||
@@ -225,23 +225,23 @@ class app {
       tipoCable == "512 F.O PKP"
     ) {
       if (tubeNumber == 8 || tubeNumber == 11 || tubeNumber == 14) {
-        this.drawMark(firstArticle, `>/ / /`);
+        this.drawMark(firstArticle, `º`);
       } else if (tubeNumber == 9 || tubeNumber == 12 || tubeNumber == 15) {
-        this.drawMark(firstArticle, `/ >/ /`);
+        this.drawMark(firstArticle, `ºº`);
       } else if (tubeNumber == 10 || tubeNumber == 13 || tubeNumber == 16) {
-        this.drawMark(firstArticle, `/ / >/`);
+        this.drawMark(firstArticle, `ººº`);
       }
     } else if (tipoCable.includes("Francia")) {
       if (tubeNumber > 13) {
-        this.drawMark(firstArticle, `>/`);
+        this.drawMark(firstArticle, `º`);
       }
     } else if (tipoCable == "288 F.O Francia 18 tubos") {
       if (tubeNumber > 13) {
-        this.drawMark(firstArticle, `>/`);
+        this.drawMark(firstArticle, `º`);
       }
     } else if (tipoCable == "288 F.O Francia 24 tubos") {
       if (tubeNumber > 13) {
-        this.drawMark(firstArticle, `>/`);
+        this.drawMark(firstArticle, `º`);
       }
     }
   }
