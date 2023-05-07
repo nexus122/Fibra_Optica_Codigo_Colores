@@ -8,5 +8,6 @@ Mediante una sencilla interfaz puedes seleccionar compañia y tipo de cable, int
     - [ ] Refactorizar el codigo para que las funciones sean mas limpias y sin parametros.
     - [ ] Ordenar los metodos, hacer que solo tengan una funcionalidad.
 - [x] 144 de francia esta rota
+- [ ] Añadir el numero de tubos y de fibras para cada compañia
 - [ ] Hacer test para comprobar que todo funciona correctamente
     - [ ] Cypress ?

@@ -142,7 +142,8 @@ class app {
       </article>
       ${this.resultPanel.innerHTML}
     `;
-    this.generarMarcas(this.cableSelected, results[4]);
+    this.generarPintas(this.cableSelected, results[4]);
+    this.generarTubosRepetidos(this.cableSelected, results[3]);
   }
 
   drawMark(donde, mensaje) {
@@ -152,35 +153,76 @@ class app {
     span.append(mensaje);
   }
 
-  generarMarcas(tipoCable, fiberPosition) {
-    let numero = this.numeroSelected;
+  generarPintas(tipoCable, fiberPosition) {
     let firstArticle = document.querySelectorAll("article .fibra")[0];
-
-    console.log("tipoCable: ", tipoCable);
-    console.log("fiberPosition: ", fiberPosition);
-
-    // this.drawMark(firstArticle, `Primero /`);
-    // this.drawMark(firstArticle, `Segundo / /`);
-    // this.drawMark(firstArticle, `Tercero / / /`);
 
     if (tipoCable == "256 F.O PKP") {
       if (fiberPosition >= 13) {
-        this.drawMark(firstArticle, `Pintas /`);
+        this.drawMark(firstArticle, `Pintas _/`);
       }
     } else if (tipoCable == "512 F.O PKP") {
       if (fiberPosition >= 9 && fiberPosition < 16) {
-        this.drawMark(firstArticle, `Pintas /`);
+        this.drawMark(firstArticle, `Pintas _/`);
       } else if (fiberPosition >= 16 && fiberPosition < 25) {
-        this.drawMark(firstArticle, `Pintas / /`);
+        this.drawMark(firstArticle, `Pintas _/ _/`);
       } else if (fiberPosition >= 25) {
-        this.drawMark(firstArticle, `Pintas / / /`);
+        this.drawMark(firstArticle, `Pintas _/ _/ _/`);
       }
     } else if (tipoCable == "144 F.O Francia") {
     } else if (tipoCable == "288 F.O Francia 18 tubos") {
       if (fiberPosition >= 13) {
-        this.drawMark(firstArticle, `Pintas /`);
+        this.drawMark(firstArticle, `Pintas _/`);
+      }
+    }
+  }
+
+  generarTubosRepetidos(tipoCable, tubeNumber) {
+    console.log("Entramos en generar tubos repetidos");
+    console.log("El tipo de calbe es: ", tipoCable);
+    console.log("El numero de tubo es: ", tubeNumber);
+    let firstArticle = document.querySelectorAll("article .tubo")[0];
+
+    if (tipoCable == "48 F.O PKP") {
+      if (tubeNumber == 3 || tubeNumber == 5) {
+        this.drawMark(firstArticle, `Tubo Repetido >/ /`);
+      } else if (tubeNumber == 4 || tubeNumber == 6) {
+        this.drawMark(firstArticle, `Tubo Repetido / >/`);
+      }
+    } else if (tipoCable == "64 F.O PKP") {
+      if (tubeNumber == 3 || tubeNumber == 5 || tubeNumber == 7) {
+        this.drawMark(firstArticle, `Tubo Repetido >/ /`);
+      } else if (tubeNumber == 4 || tubeNumber == 6 || tubeNumber == 8) {
+        this.drawMark(firstArticle, `Tubo Repetido / >/`);
+      }
+    } else if (tipoCable == "96 F.O PKP") {
+      if (tubeNumber == 4 || tubeNumber == 7 || tubeNumber == 10) {
+        this.drawMark(firstArticle, `Tubo Repetido >/ / /`);
+      } else if (tubeNumber == 5 || tubeNumber == 8 || tubeNumber == 11) {
+        this.drawMark(firstArticle, `Tubo Repetido / >/ /`);
+      } else if (tubeNumber == 6 || tubeNumber == 9 || tubeNumber == 12) {
+        this.drawMark(firstArticle, `Tubo Repetido / / >/`);
+      }
+    } else if (
+      tipoCable == "128 F.O PKP" ||
+      tipoCable == "256 F.O PKP" ||
+      tipoCable == "512 F.O PKP"
+    ) {
+      if (tubeNumber == 8 || tubeNumber == 11 || tubeNumber == 14) {
+        this.drawMark(firstArticle, `Tubo Repetido >/ / /`);
+      } else if (tubeNumber == 9 || tubeNumber == 12 || tubeNumber == 15) {
+        this.drawMark(firstArticle, `Tubo Repetido / >/ /`);
+      } else if (tubeNumber == 10 || tubeNumber == 13 || tubeNumber == 16) {
+        this.drawMark(firstArticle, `Tubo Repetido / / >/`);
+      }
+    } else if (tipoCable == "144 F.O Francia") {
+    } else if (tipoCable == "288 F.O Francia 18 tubos") {
+      if (tubeNumber > 13) {
+        this.drawMark(firstArticle, `Tubo Repetido >/`);
       }
     } else if (tipoCable == "288 F.O Francia 24 tubos") {
+      if (tubeNumber > 13) {
+        this.drawMark(firstArticle, `Tubo Repetido >/`);
+      }
     }
   }
 }
