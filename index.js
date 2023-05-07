@@ -200,23 +200,48 @@ class app {
     let firstArticle = document.querySelectorAll("article .tubo")[0];
 
     if (tipoCable == "48 F.O PKP") {
-      if (tubeNumber == 3 || tubeNumber == 5) {
+      if (tubeNumber == 1 || tubeNumber == 3 || tubeNumber == 5) {
         this.drawMark(firstArticle, `º`);
-      } else if (tubeNumber == 4 || tubeNumber == 6) {
+      } else if (tubeNumber == 2 || tubeNumber == 4 || tubeNumber == 6) {
         this.drawMark(firstArticle, `ºº`);
       }
     } else if (tipoCable == "64 F.O PKP") {
-      if (tubeNumber == 3 || tubeNumber == 5 || tubeNumber == 7) {
+      if (
+        tubeNumber == 1 ||
+        tubeNumber == 3 ||
+        tubeNumber == 5 ||
+        tubeNumber == 7
+      ) {
         this.drawMark(firstArticle, `º`);
-      } else if (tubeNumber == 4 || tubeNumber == 6 || tubeNumber == 8) {
+      } else if (
+        tubeNumber == 2 ||
+        tubeNumber == 4 ||
+        tubeNumber == 6 ||
+        tubeNumber == 8
+      ) {
         this.drawMark(firstArticle, `ºº`);
       }
     } else if (tipoCable == "96 F.O PKP") {
-      if (tubeNumber == 4 || tubeNumber == 7 || tubeNumber == 10) {
+      if (
+        tubeNumber == 1 ||
+        tubeNumber == 4 ||
+        tubeNumber == 7 ||
+        tubeNumber == 10
+      ) {
         this.drawMark(firstArticle, `º`);
-      } else if (tubeNumber == 5 || tubeNumber == 8 || tubeNumber == 11) {
+      } else if (
+        tubeNumber == 2 ||
+        tubeNumber == 5 ||
+        tubeNumber == 8 ||
+        tubeNumber == 11
+      ) {
         this.drawMark(firstArticle, `ºº`);
-      } else if (tubeNumber == 6 || tubeNumber == 9 || tubeNumber == 12) {
+      } else if (
+        tubeNumber == 3 ||
+        tubeNumber == 6 ||
+        tubeNumber == 9 ||
+        tubeNumber == 12
+      ) {
         this.drawMark(firstArticle, `ººº`);
       }
     } else if (
@@ -224,11 +249,26 @@ class app {
       tipoCable == "256 F.O PKP" ||
       tipoCable == "512 F.O PKP"
     ) {
-      if (tubeNumber == 8 || tubeNumber == 11 || tubeNumber == 14) {
+      if (
+        tubeNumber == 5 ||
+        tubeNumber == 8 ||
+        tubeNumber == 11 ||
+        tubeNumber == 14
+      ) {
         this.drawMark(firstArticle, `º`);
-      } else if (tubeNumber == 9 || tubeNumber == 12 || tubeNumber == 15) {
+      } else if (
+        tubeNumber == 6 ||
+        tubeNumber == 9 ||
+        tubeNumber == 12 ||
+        tubeNumber == 15
+      ) {
         this.drawMark(firstArticle, `ºº`);
-      } else if (tubeNumber == 10 || tubeNumber == 13 || tubeNumber == 16) {
+      } else if (
+        tubeNumber == 7 ||
+        tubeNumber == 10 ||
+        tubeNumber == 13 ||
+        tubeNumber == 16
+      ) {
         this.drawMark(firstArticle, `ººº`);
       }
     } else if (tipoCable.includes("Francia")) {
