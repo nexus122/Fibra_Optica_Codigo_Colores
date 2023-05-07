@@ -214,7 +214,10 @@ class app {
       } else if (tubeNumber == 10 || tubeNumber == 13 || tubeNumber == 16) {
         this.drawMark(firstArticle, `Tubo Repetido / / >/`);
       }
-    } else if (tipoCable == "144 F.O Francia") {
+    } else if (tipoCable.includes("Francia")) {
+      if (tubeNumber > 13) {
+        this.drawMark(firstArticle, `Tubo Repetido >/`);
+      }
     } else if (tipoCable == "288 F.O Francia 18 tubos") {
       if (tubeNumber > 13) {
         this.drawMark(firstArticle, `Tubo Repetido >/`);
