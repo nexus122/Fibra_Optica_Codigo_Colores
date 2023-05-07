@@ -272,15 +272,15 @@ class app {
         this.drawMark(firstArticle, `ººº`);
       }
     } else if (tipoCable.includes("Francia")) {
-      if (tubeNumber > 13) {
+      if (tubeNumber >= 13) {
         this.drawMark(firstArticle, `º`);
       }
     } else if (tipoCable == "288 F.O Francia 18 tubos") {
-      if (tubeNumber > 13) {
+      if (tubeNumber >= 13) {
         this.drawMark(firstArticle, `º`);
       }
     } else if (tipoCable == "288 F.O Francia 24 tubos") {
-      if (tubeNumber > 13) {
+      if (tubeNumber >= 13) {
         this.drawMark(firstArticle, `º`);
       }
     }
