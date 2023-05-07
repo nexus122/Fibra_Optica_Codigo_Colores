@@ -130,20 +130,40 @@ class app {
     let fiberColor = this.searchFibraInfo(this.numeroSelected).fiberColor;
     let fiberPosition = this.searchFibraInfo(this.numeroSelected).fiberPosition;
 
-    return [fiberNumber, tubeColors, fiberColor, tubeNumber + 1, fiberPosition];
+    return {
+      fiberNumber: fiberNumber, // 0
+      tubeColors: tubeColors, // 1
+      fiberColor: fiberColor, // 2
+      tubeNumber: tubeNumber + 1, // 3
+      fiberPosition: fiberPosition, // 4
+    };
   }
 
   drawResults(results) {
     this.resultPanel.innerHTML = `
       <article>
-      <h1>${this.companySelected} - ${this.cableSelected}</h1>
-        <h3 class="tubo"><b>Tubo</b> ${results[3]} - ${results[1]} <i style="color:${results[1]}"class="fa-sharp fa-solid fa-square"></i></h3>
-        <h3 class="fibra"><b>Fibra ${results[0]}</b> - ${results[2]} <i style="color:${results[2]}"class="fa-sharp fa-solid fa-square"></i></h3>
+      <header>
+        <p class="title">${this.companySelected} - ${
+      this.cableSelected
+    } - Tubos: ${this.currentData.cableInfo.tubes} - Fibras *Tubo: ${
+      this.currentData.cableInfo.fibers / this.currentData.cableInfo.tubes
+    }</p>
+    </header>
+        <p class="tubo"><b>Tubo</b> ${results.tubeNumber} - ${
+      results.tubeColors
+    } <i style="color:${
+      results.tubeColors
+    }"class="fa-sharp fa-solid fa-square"></i></p>
+        <p class="fibra"><b>Fibra ${results.fiberNumber}</b> - ${
+      results.fiberColor
+    } <i style="color:${
+      results.fiberColor
+    }"class="fa-sharp fa-solid fa-square"></i></p>
       </article>
       ${this.resultPanel.innerHTML}
     `;
-    this.generarPintas(this.cableSelected, results[4]);
-    this.generarTubosRepetidos(this.cableSelected, results[3]);
+    this.generarPintas(this.cableSelected, results.fiberPosition);
+    this.generarTubosRepetidos(this.cableSelected, results.tubeNumber);
   }
 
   drawMark(donde, mensaje) {
@@ -158,49 +178,46 @@ class app {
 
     if (tipoCable == "256 F.O PKP") {
       if (fiberPosition >= 13) {
-        this.drawMark(firstArticle, `Pintas _/`);
+        this.drawMark(firstArticle, `/`);
       }
     } else if (tipoCable == "512 F.O PKP") {
       if (fiberPosition >= 9 && fiberPosition < 16) {
-        this.drawMark(firstArticle, `Pintas _/`);
+        this.drawMark(firstArticle, `/`);
       } else if (fiberPosition >= 16 && fiberPosition < 25) {
-        this.drawMark(firstArticle, `Pintas _/ _/`);
+        this.drawMark(firstArticle, `//`);
       } else if (fiberPosition >= 25) {
-        this.drawMark(firstArticle, `Pintas _/ _/ _/`);
+        this.drawMark(firstArticle, `///`);
       }
     } else if (tipoCable == "144 F.O Francia") {
     } else if (tipoCable == "288 F.O Francia 18 tubos") {
       if (fiberPosition >= 13) {
-        this.drawMark(firstArticle, `Pintas _/`);
+        this.drawMark(firstArticle, `/`);
       }
     }
   }
 
   generarTubosRepetidos(tipoCable, tubeNumber) {
-    console.log("Entramos en generar tubos repetidos");
-    console.log("El tipo de calbe es: ", tipoCable);
-    console.log("El numero de tubo es: ", tubeNumber);
     let firstArticle = document.querySelectorAll("article .tubo")[0];
 
     if (tipoCable == "48 F.O PKP") {
       if (tubeNumber == 3 || tubeNumber == 5) {
-        this.drawMark(firstArticle, `Tubo Repetido >/ /`);
+        this.drawMark(firstArticle, `>/ /`);
       } else if (tubeNumber == 4 || tubeNumber == 6) {
-        this.drawMark(firstArticle, `Tubo Repetido / >/`);
+        this.drawMark(firstArticle, `/ >/`);
       }
     } else if (tipoCable == "64 F.O PKP") {
       if (tubeNumber == 3 || tubeNumber == 5 || tubeNumber == 7) {
-        this.drawMark(firstArticle, `Tubo Repetido >/ /`);
+        this.drawMark(firstArticle, `>/ /`);
       } else if (tubeNumber == 4 || tubeNumber == 6 || tubeNumber == 8) {
-        this.drawMark(firstArticle, `Tubo Repetido / >/`);
+        this.drawMark(firstArticle, `/ >/`);
       }
     } else if (tipoCable == "96 F.O PKP") {
       if (tubeNumber == 4 || tubeNumber == 7 || tubeNumber == 10) {
-        this.drawMark(firstArticle, `Tubo Repetido >/ / /`);
+        this.drawMark(firstArticle, `>/ / /`);
       } else if (tubeNumber == 5 || tubeNumber == 8 || tubeNumber == 11) {
-        this.drawMark(firstArticle, `Tubo Repetido / >/ /`);
+        this.drawMark(firstArticle, `/ >/ /`);
       } else if (tubeNumber == 6 || tubeNumber == 9 || tubeNumber == 12) {
-        this.drawMark(firstArticle, `Tubo Repetido / / >/`);
+        this.drawMark(firstArticle, `/ / >/`);
       }
     } else if (
       tipoCable == "128 F.O PKP" ||
@@ -208,23 +225,23 @@ class app {
       tipoCable == "512 F.O PKP"
     ) {
       if (tubeNumber == 8 || tubeNumber == 11 || tubeNumber == 14) {
-        this.drawMark(firstArticle, `Tubo Repetido >/ / /`);
+        this.drawMark(firstArticle, `>/ / /`);
       } else if (tubeNumber == 9 || tubeNumber == 12 || tubeNumber == 15) {
-        this.drawMark(firstArticle, `Tubo Repetido / >/ /`);
+        this.drawMark(firstArticle, `/ >/ /`);
       } else if (tubeNumber == 10 || tubeNumber == 13 || tubeNumber == 16) {
-        this.drawMark(firstArticle, `Tubo Repetido / / >/`);
+        this.drawMark(firstArticle, `/ / >/`);
       }
     } else if (tipoCable.includes("Francia")) {
       if (tubeNumber > 13) {
-        this.drawMark(firstArticle, `Tubo Repetido >/`);
+        this.drawMark(firstArticle, `>/`);
       }
     } else if (tipoCable == "288 F.O Francia 18 tubos") {
       if (tubeNumber > 13) {
-        this.drawMark(firstArticle, `Tubo Repetido >/`);
+        this.drawMark(firstArticle, `>/`);
       }
     } else if (tipoCable == "288 F.O Francia 24 tubos") {
       if (tubeNumber > 13) {
-        this.drawMark(firstArticle, `Tubo Repetido >/`);
+        this.drawMark(firstArticle, `>/`);
       }
     }
   }
