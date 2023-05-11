@@ -9,6 +9,9 @@ class app {
   searchBtn = document.querySelector("#buscar");
   deleteBtn = document.querySelector("#borrar");
   resultPanel = document.querySelector("#resultados");
+  popupPanel = document.querySelector(".helper");
+  closePopup = document.querySelector("#cerrar");
+  openInfo = document.querySelector("#info");
   // Vars and data
   data = [];
   currentData = [];
@@ -20,6 +23,7 @@ class app {
     this.ObtainData();
     this.HtmlInteractions();
     this.companySelected = this.companySelect.value;
+    this.popupPanel.style.display = "none";
   }
 
   async ObtainData() {
@@ -52,6 +56,15 @@ class app {
 
     this.deleteBtn.addEventListener("click", () => {
       this.resultPanel.innerHTML = "";
+    });
+
+    this.closePopup.addEventListener("click", () => {
+      this.popupPanel.style.display = "none";
+    });
+
+    this.openInfo.addEventListener("click", () => {
+      console.log("info");
+      this.popupPanel.style.display = "block";
     });
   }
 
