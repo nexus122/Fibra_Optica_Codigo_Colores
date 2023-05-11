@@ -51,6 +51,7 @@ class app {
 
     // Escuchamos a los botones:
     this.searchBtn.addEventListener("click", () => {
+      console.log("Se entra en buscar");
       this.drawResults(this.searchData());
     });
 

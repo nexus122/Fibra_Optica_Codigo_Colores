@@ -3,6 +3,10 @@ Esto es un programa que pretende ayudar a los instaladores de fibra optica.
 Mediante una sencilla interfaz puedes seleccionar compañia y tipo de cable, introducir un numero y te dara los colores tanto del tubo como de la fibra.
 
 ## Changelog
+### 11/05/2023
+- Se ha añadido un popup informativo y botones para poder abrirlo y cerrarlo.
+    - En el popup se explica brevemente como usar la app y el significado de los simbolos.
+- Se ha modificado los botones de borrar y buscar para que ocupen menos.
 ### 07/05/2023
 - Se ha añadido para todas las fibras el numero de tubo en el que estas cuando su color se repite.
 - Se ha añadido la información sobre el cable 144 francia en referencia a los tubos.

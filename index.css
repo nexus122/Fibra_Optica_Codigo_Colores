@@ -52,3 +52,8 @@ header h2{
 .helper article{
     margin: 0;
 }
+
+.actions{
+    display: flex;
+    gap: 1em;
+}
