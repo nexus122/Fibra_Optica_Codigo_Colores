@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JPQQPX3BNN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-JPQQPX3BNN");
+    </script>
+    <!-- Fontawersome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"
+    />
+
+    <title>Fibra Optica</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div>
+          <label for="compañia">Selecciona la compañia</label>
+          <div class="form-group">
+            <select class="form-control" id="compañia">
+              <option disabled selected>Selecciona una compañia</option>
+              <option value="Telefónica" selected>Telefónica</option>
+              <option value="Movistar">Movistar</option>
+              <option value="Jazztel">Jazztel</option>
+              <option value="Masmovil">Masmovil</option>
+              <option value="Vodafone">Vodafone</option>
+              <option value="Orange">Orange</option>
+              <option value="ALPI">ALPI</option>
+            </select>
+          </div>
+
+          <span id="cables_1">
+            <label for="compañia">Selecciona el tipo de cable</label>
+            <div class="form-group">
+              <select class="form-control" id="cableSelect">
+                <option disabled selected>Selecciona una tipo de cable</option>
+                <option class="es">32 F.O PKP</option>
+                <option class="es">48 F.O PKP</option>
+                <option class="es">64 F.O PKP</option>
+                <option class="es">96 F.O PKP</option>
+                <option class="es">128 F.O PKP</option>
+                <option class="es">256 F.O PKP</option>
+                <option class="es">512 F.O PKP</option>
+                <option class="fr">144 F.O Francia</option>
+                <option class="fr">288 F.O Francia 18 tubos</option>
+                <option class="fr">288 F.O Francia 24 tubos</option>
+              </select>
+            </div>
+          </span>
+
+          <label for="compañia">Escribe el numero</label>
+
+          <div class="input-group">
+            <input
+              id="numero"
+              type="number"
+              class="form-control"
+              placeholder="Numero de cable"
+              aria-label="Numero de cable"
+            />
+          </div>
+          <div class="actions">
+            <button id="borrar" class="acciones btn" type="button">
+              <i class="far fa-trash-alt"></i>
+            </button>
+            <button id="buscar" class="acciones btn" type="button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <button id="info" class="acciones btn" type="button">
+            <i class="fa-solid fa-circle-info"></i>
+          </button>
+
+          <div id="resultados"></div>
+        </div>
+      </div>
+    </div>
+    <div class="helper">
+      <article>
+        <h1>¿Como utilizar la aplicación?</h1>
+        <ul>
+          <li>Selecciona la compañia</li>
+          <li>Selecciona el tipo de cable</li>
+          <li>Escribe el numero de cable que necesites</li>
+          <li>Dale al boton de la lupa</li>
+        </ul>
+        <h1>¿Que significan los simbolos?</h1>
+        <table>
+          <tr>
+            <th>Simbolo</th>
+            <th>Significado</th>
+          </tr>
+          <tr>
+            <td>/</td>
+            <td>Pinta Numero Uno</td>
+          </tr>
+          <tr>
+            <td>//</td>
+            <td>Pinta Numero Dos</td>
+          </tr>
+          <tr>
+            <td>///</td>
+            <td>Pinta Numero Tres</td>
+          </tr>
+          <tr>
+            <td>º</td>
+            <td>Tubo Numero Uno</td>
+          </tr>
+          <tr>
+            <td>ºº</td>
+            <td>Tubo Numero Dos</td>
+          </tr>
+          <tr>
+            <td>ººº</td>
+            <td>Tubo Numero Tres</td>
+          </tr>
+        </table>
+        <button id="cerrar">Cerrar</button>
+      </article>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+<script src="./index.js"></script>
