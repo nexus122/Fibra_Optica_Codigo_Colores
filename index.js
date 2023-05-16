@@ -168,16 +168,8 @@ class app {
       this.currentData.cableInfo.fibers / this.currentData.cableInfo.tubes
     }</p>
     </header>
-        <p class="tubo"><b>Tubo</b> ${results.tubeNumber} - ${
-      results.tubeColors
-    } <i style="color:${
-      results.tubeColors
-    }"class="fa-sharp fa-solid fa-square"></i></p>
-        <p class="fibra"><b>Fibra ${results.fiberNumber}</b> - ${
-      results.fiberColor
-    } <i style="color:${
-      results.fiberColor
-    }"class="fa-sharp fa-solid fa-square"></i></p>
+        <p class="tubo"><b>Tubo</b> ${results.tubeNumber} - ${this.translateColors(results.tubeColors)} <i style="color:${results.tubeColors}"class="fa-sharp fa-solid fa-square"></i></p>
+        <p class="fibra"><b>Fibra ${results.fiberNumber}</b> - ${this.translateColors(results.fiberColor)} <i style="color:${results.fiberColor}"class="fa-sharp fa-solid fa-square"></i></p>
       </article>
       ${this.resultPanel.innerHTML}
     `;
@@ -303,6 +295,47 @@ class app {
         this.drawMark(firstArticle, `º`);
       }
     }
+  }
+
+  translateColors(color){
+    let spanishColor = "";
+    switch(color){
+      case "green":
+        spanishColor = "verde";
+        break;
+      case "red":
+        spanishColor = "rojo";
+        break;
+      case "blue":
+        spanishColor = "azul";
+        break;
+      case "yellow":
+        spanishColor = "amarillo";
+        break;
+      case "grey":
+        spanishColor = "gris";
+        break;
+      case "purple":
+        spanishColor = "violeta"; 
+      case "brown":
+        spanishColor = "marron";
+        break;
+      case "orange":
+        spanishColor = "orange";
+        break;
+      case "white":
+        spanishColor = "blanco";
+        break;
+      case "cyan":
+        spanishColor = "turquesa";
+        break;
+      case "pink":
+        spanishColor = "rosa";
+        break;
+      default:
+          spanishColor = color
+    }
+    return spanishColor
   }
 }
 
