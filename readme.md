@@ -33,5 +33,6 @@ Mediante una sencilla interfaz puedes seleccionar compañia y tipo de cable, int
     - [x] Ordenar los metodos, hacer que solo tengan una funcionalidad.
 - [x] 144 falta información para la repetición de pintas y tubos.
 - [x] Añadir el numero de tubos y de fibras para cada compañia
+- [ ] Añadir mas tablas de fibra optica
 - [ ] Hacer test para comprobar que todo funciona correctamente
     - [ ] Cypress ?
