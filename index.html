@@ -31,5 +31,28 @@
       <iframe src="./Interfaz.html" id="iframe1" frameborder="0"></iframe>
       <iframe src="./Interfaz.html" id="iframe2" frameborder="0"></iframe>
     </div>
+    <script>
+      setTimeout(()=>{
+        console.log("Se ha cargado");
+        let iframe1 = document.getElementById("iframe1");
+        let iframe2 = document.getElementById("iframe2");
+
+        var observer = new MutationObserver(function (mutations) {
+          let contenidoAltura1 =
+            iframe1.contentWindow.document.body.scrollHeight;
+          let contenidoAltura2 =
+            iframe2.contentWindow.document.body.scrollHeight;
+          iframe1.style.height = contenidoAltura1 + 100 + "px";
+          iframe2.style.height = contenidoAltura2 + 100 + "px";
+        });
+
+        // Configurar el objeto MutationObserver para observar los cambios que te interesan
+        var config = { childList: true, subtree: true };
+
+        // Llamar al método observe() para iniciar la observación
+        observer.observe(iframe1.contentWindow.document.body, config);
+        observer.observe(iframe2.contentWindow.document.body, config);
+      },1000)
+    </script>
   </body>
 </html>
