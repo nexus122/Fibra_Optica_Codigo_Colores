@@ -19,6 +19,7 @@ class app {
   cableSelected;
   numeroSelected;
 
+  // Compañias
   frenchCompanys = ["Orange", "ALPI"];
   spanishCompany = ["Telefónica","Movistar","Jazztel","Masmovil","Vodafone"];
 
