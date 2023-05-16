@@ -1,112 +1,59 @@
-:root {    
-    --primary: #ffb300!important;
-    --error: #d81b60!important;
-    --primary-hover: #fbc02d!important;
-    --primary-focus: rgba(253, 216, 53, 0.125)!important;
-    --primary-inverse: rgba(0, 0, 0, 0.75)!important;
-  }
+:root{
+    --primary: #fb8c00!important;
+    --primary-hover: #f57c00!important;
+    --primary-focus: rgba(251, 140, 0, 0.125)!important;
+    --primary-inverse: #FFF!important;
+    --error: #d81b60;
 
-.minh-100 {
-    height: 100vh;
 }
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 18px;
-}
-
-.float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #D9534F;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    box-shadow: 2px 2px 3px #999;
-}
-
-a.float:hover {
-    color: black;
-}
-
-.my-float {
-    margin-top: 22px;
-}
-
-button.acciones {
-    display: block;
-}
-.btn-group{
-    width: 100%;
-    margin-top: 1em;
-    padding: 1em;
-    box-sizing: border-box;
-    text-align: center;
-    margin: 0;
-}
-
-.company {
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-    display: block;
-}
-
 .logo {
-    width: 50%;
-    max-width: 200px;
+    width: 100px;
+    height: auto;
+    border-style: none;
     margin: 0 auto;
     display: block;
     background: white;
-    padding: 1em;
     border-radius: 50%;
-    margin-bottom: 1em;
-}
-
-.row.marcas {
-    margin-bottom: 1em;
-}
-
-article {
-    border-bottom: 1px solid black;
     padding: 1em;
+    margin-top: 1em;
 }
 
-.badge {
-    background: #007bff;
+.logo img{
+    width: 100px;
+}
+.badge{
+    margin-left: 1em;
     padding: 0.2em;
+    background-color: var(--primary);
     border-radius: 30px;
 }
 
-.jumbotron {
-    width: 80vw;
+header h2{
+    margin: 0;
 }
 
-.container {
-    min-height: 100vh;
+.title{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.tubo, .fibra{
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+.helper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.helper article{
+    margin: 0;
+}
+
+.actions{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 1em;
 }
-
-.alert-danger{
-    color: var(--error);
-}
-
-.btn-danger{    
-    background-color: var(--error);
-    border: var(--error);
-}
-
-i.fas.fa-square-full {
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-

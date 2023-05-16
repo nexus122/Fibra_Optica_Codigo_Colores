@@ -1,102 +1,155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPQQPX3BNN"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JPQQPX3BNN"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-JPQQPX3BNN');
+      gtag("config", "G-JPQQPX3BNN");
     </script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <!-- Fontawersome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="./index.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"
+    />
 
     <title>Fibra Optica</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div>
-                    <div class="jumbotron">
-                        <label for="compañia">Selecciona la compañia</label>
-                        <div class="form-group">
-                            <select class="form-control" id="compañia">    
-                                <option disabled selected>Selecciona una compañia</option>                            
-                                <option value="1">Telefónica</option>
-                                <option value="2">Movistar</option>
-                                <option value="3">Jazztel</option>
-                                <option value="4">Masmovil</option>
-                                <option value="5">Vodafone</option>
-                                <option value="6">Orange</option>                                
-                            </select>
-                        </div>
+      <div class="row">
+        <h1>Fibra Optica Codigo De Colores</h1>
+        <div>
+          <label for="compañia">Selecciona la compañia</label>
+          <div class="form-group">
+            <select class="form-control" id="compañia">
+              <option disabled selected>Selecciona una compañia</option>
+              <option value="Telefónica" selected>Telefónica</option>
+              <option value="Movistar">Movistar</option>
+              <option value="Jazztel">Jazztel</option>
+              <option value="Masmovil">Masmovil</option>
+              <option value="Vodafone">Vodafone</option>
+              <option value="Orange">Orange</option>
+              <option value="ALPI">ALPI</option>
+            </select>
+          </div>
 
-                        <span id="cables_1">
-                            <label for="compañia">Selecciona el tipo de cable</label>
-                            <div class="form-group">
-                                <select class="form-control" id="cableSelect">
-                                    <option disabled selected>Selecciona una tipo de cable</option>
-                                    <option class="es" value="0">32 F.O PKP</option>
-                                    <option class="es" value="1">48 F.O PKP</option>
-                                    <option class="es" value="2">64 F.O PKP</option>
-                                    <option class="es" value="3">96 F.O PKP</option>
-                                    <option class="es" value="4">128 F.O PKP</option>
-                                    <option class="es" value="5">256 F.O PKP</option>
-                                    <option class="es" value="6">512 F.O PKP</option>                            
-                                    <option class="fr" value="7">144 F.O FRANCIA</option>
-                                    <option class="fr" value="8">288 F.O FRANCIA</option>
-                                    
-                                </select>
-                            </div>
-                        </span>
-
-                        <label for="compañia">Escribe el numero</label>
-
-                        <div class="input-group">
-                            <input id="numero" type="number" class="form-control" placeholder="Numero de cable"
-                                aria-label="Numero de cable">
-                        </div>
-                        <div class="btn-group" role="group">
-                        <button id="buscar" class="acciones btn btn-primary" type="button"><i
-                                class="fas fa-search"></i></button>
-                        <button id="borrar" class="acciones btn btn-danger" type="button"><i
-                                class="far fa-trash-alt"></i></button>
-                        </div>
-                        <div id="resultados"></div>
-
-                    </div>
-                </div>
-
+          <span id="cables_1">
+            <label for="compañia">Selecciona el tipo de cable</label>
+            <div class="form-group">
+              <select class="form-control" id="cableSelect">
+                <option disabled selected>Selecciona una tipo de cable</option>
+                <option class="es">32 F.O PKP</option>
+                <option class="es">48 F.O PKP</option>
+                <option class="es">64 F.O PKP</option>
+                <option class="es">96 F.O PKP</option>
+                <option class="es">128 F.O PKP</option>
+                <option class="es">256 F.O PKP</option>
+                <option class="es">512 F.O PKP</option>
+                <option class="fr">144 F.O Francia</option>
+                <option class="fr">288 F.O Francia 18 tubos</option>
+                <option class="fr">288 F.O Francia 24 tubos</option>
+              </select>
             </div>
+          </span>
 
+          <label for="compañia">Escribe el numero</label>
+
+          <div class="input-group">
+            <input
+              id="numero"
+              type="number"
+              class="form-control"
+              placeholder="Numero de cable"
+              aria-label="Numero de cable"
+            />
+          </div>
+          <div class="actions">
+            <button id="borrar" class="acciones btn" type="button">
+              <i class="far fa-trash-alt"></i>
+            </button>
+            <button id="buscar" class="acciones btn" type="button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <button id="info" class="acciones btn" type="button">
+            <i class="fa-solid fa-circle-info"></i>
+          </button>
+
+          <div id="resultados"></div>
         </div>
+      </div>
     </div>
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-
-</body>
-
+    <div class="helper">
+      <article>
+        <h1>¿Como utilizar la aplicación?</h1>
+        <ul>
+          <li>Selecciona la compañia</li>
+          <li>Selecciona el tipo de cable</li>
+          <li>Escribe el numero de cable que necesites</li>
+          <li>Dale al boton de la lupa</li>
+        </ul>
+        <h1>¿Que significan los simbolos?</h1>
+        <table>
+          <tr>
+            <th>Simbolo</th>
+            <th>Significado</th>
+          </tr>
+          <tr>
+            <td>/</td>
+            <td>Pinta Numero Uno</td>
+          </tr>
+          <tr>
+            <td>//</td>
+            <td>Pinta Numero Dos</td>
+          </tr>
+          <tr>
+            <td>///</td>
+            <td>Pinta Numero Tres</td>
+          </tr>
+          <tr>
+            <td>º</td>
+            <td>Tubo Numero Uno</td>
+          </tr>
+          <tr>
+            <td>ºº</td>
+            <td>Tubo Numero Dos</td>
+          </tr>
+          <tr>
+            <td>ººº</td>
+            <td>Tubo Numero Tres</td>
+          </tr>
+        </table>
+        <button id="cerrar">Cerrar</button>
+      </article>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
 <script src="./index.js"></script>
