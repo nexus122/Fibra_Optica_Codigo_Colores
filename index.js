@@ -19,6 +19,9 @@ class app {
   cableSelected;
   numeroSelected;
 
+  frenchCompanys = ["Orange", "ALPI"];
+  spanishCompany = ["Telefónica","Movistar","Jazztel","Masmovil","Vodafone"];
+
   async init() {
     this.ObtainData();
     this.HtmlInteractions();
@@ -70,7 +73,11 @@ class app {
   }
 
   countryFilter() {
-    if (this.companySelected == "Orange") {
+
+    console.log("Condición: ", this.isFrench());
+    console.log(this.companySelected);
+
+    if (this.isFrench()) {
       $(".fr").show();
       $(".es").hide();
     } else {
@@ -79,7 +86,12 @@ class app {
     }
   }
 
+  isFrench(){
+    return this.frenchCompanys.find((element) => element == this.companySelected) ? true:false;
+  }
+
   filterData() {
+    console.log("Datos: ", this.data);
     return this.data.find((element) => element.name == this.cableSelected);
   }
 
@@ -129,6 +141,11 @@ class app {
 
   constructTable() {
     const arrTable = [];
+
+    console.log("Current Data: ", this.currentData)
+    console.log("Current Data cableInfo: ", this.currentData.cableInfo);
+    console.log("Current Data cableInfo tubeColors: ", this.currentData.cableInfo.tubeColors);
+
     this.currentData.cableInfo.tubeColors.forEach(() => {
       arrTable.push(this.currentData.cableInfo.fiberColors);
     });
