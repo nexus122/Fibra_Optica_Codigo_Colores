@@ -3,8 +3,11 @@ Esto es un programa que pretende ayudar a los instaladores de fibra optica.
 Mediante una sencilla interfaz puedes seleccionar compañia y tipo de cable, introducir un numero y te dara los colores tanto del tubo como de la fibra.
 
 ## Changelog
+### 17/05/2023
+- Quitamos el scroll automatico
 ### 16/05/2023
-Añadimos la compañia ALPI francesa.
+- Añadimos la compañia ALPI francesa.
+- Se ha creado el modo versus
 ### 11/05/2023
 - Se ha añadido un popup informativo y botones para poder abrirlo y cerrarlo.
     - En el popup se explica brevemente como usar la app y el significado de los simbolos.
