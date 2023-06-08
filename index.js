@@ -170,8 +170,8 @@ class app {
       this.currentData.cableInfo.fibers / this.currentData.cableInfo.tubes
     }</p>
     </header>
-        <p class="tubo"><b>Tubo</b> ${results.tubeNumber} - ${this.translateColors(results.tubeColors)} <i style="color:${results.tubeColors}"class="fa-sharp fa-solid fa-square"></i></p>
-        <p class="fibra"><b>Fibra ${results.fiberNumber}</b> - ${this.translateColors(results.fiberColor)} <i style="color:${results.fiberColor}"class="fa-sharp fa-solid fa-square"></i></p>
+        <p class="tubo"><b>Tubo</b> ${results.tubeNumber} - ${this.translateColors(results.tubeColors)} <i style="color:${this.transformColors(results.tubeColors)}"class="fa-sharp fa-solid fa-square"></i></p>
+        <p class="fibra"><b>Fibra ${results.fiberNumber}</b> - ${this.translateColors(results.fiberColor)} <i style="color:${this.transformColors(results.fiberColor)}"class="fa-sharp fa-solid fa-square"></i></p>
       </article>
       ${this.resultPanel.innerHTML}
     `;
@@ -297,6 +297,10 @@ class app {
         this.drawMark(firstArticle, `º`);
       }
     }
+  }
+
+  transformColors(color){
+    return color == "brown"? "#964B00": color
   }
 
   translateColors(color){
