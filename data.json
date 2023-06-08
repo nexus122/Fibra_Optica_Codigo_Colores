@@ -358,5 +358,79 @@
         "pink"
       ]
     }
+  },
+  {
+    "name": "144 F.O Francia 8 fibras por tubo flexible",
+    "cableInfo": {
+      "fibers": 144,
+      "tubes": 18,
+      "tubeColors": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "white",
+        "orange",
+        "grey"
+      ],
+      "fiberColors": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "white",
+        "orange",
+        "grey",
+        "brown",
+        "black",
+        "cyan",
+        "pink",
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "white"
+      ]
+    }
+  },
+  {
+    "name": "144 F.O Francia ABCN 8 fibras por tubo rigido",
+    "cableInfo": {
+      "fibers": 144,
+      "tubes": 18,
+      "tubeColors": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "white",
+        "orange",
+        "grey"
+      ],
+      "fiberColors": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "white",
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "white",
+        "orange",
+        "grey",
+        "brown",
+        "black",
+        "cyan",
+        "pink"
+      ]
+    }
   }
 ]

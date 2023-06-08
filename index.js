@@ -71,12 +71,22 @@ class app {
     });
   }
 
-  countryFilter() {
+  countryFilter() {    
     if (this.isFrench()) {
-      $(".fr").show();
-      $(".es").hide();
+      if(this.companySelected == "ALPI"){
+        $(".fr.alpi").show();
+        $(".fr.orange").hide();  
+        $(".es").hide();
+      }else{
+        $(".fr.orange").show();
+        $(".fr.alpi").hide();  
+        $(".es").hide();
+      }
+
+      
     } else {
-      $(".fr").hide();
+      $(".fr.alpi").hide();
+      $(".fr.orange").hide(); 
       $(".es").show();
     }
   }
@@ -202,8 +212,12 @@ class app {
         this.drawMark(firstArticle, `///`);
       }
     } else if (tipoCable == "144 F.O Francia") {
-    } else if (tipoCable == "288 F.O Francia 18 tubos") {
+    } else if (tipoCable == "288 F.O Francia 18 tubos" || tipoCable == "144 F.O Francia 8 fibras por tubo flexible") {
       if (fiberPosition >= 13) {
+        this.drawMark(firstArticle, `/`);
+      }
+    } else if(tipoCable == "144 F.O Francia ABCN 8 fibras por tubo rigido"){
+      if(fiberPosition >= 7){
         this.drawMark(firstArticle, `/`);
       }
     }
