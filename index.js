@@ -160,6 +160,7 @@ class app {
   }
 
   drawResults(results) {
+    console.log("Results: ", results);
     this.resultPanel.innerHTML = `
       <article>
       <header>
@@ -318,6 +319,7 @@ class app {
         break;
       case "purple":
         spanishColor = "violeta"; 
+        break;
       case "brown":
         spanishColor = "marron";
         break;
