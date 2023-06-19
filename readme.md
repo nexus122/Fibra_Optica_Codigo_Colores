@@ -8,6 +8,8 @@ Mediante una sencilla interfaz puedes seleccionar compañia y tipo de cable, int
 - Javascript
 
 # Changelog
+### 19/06/2023
+Se añade [Guages](https://secure.gaug.es/dashboard?welcome=1#/gauges/6490af85002f31719f4fdc73/code) que sirve para medir las analiticas de la web.
 ### 16/05/2023
 - Añadimos la compañia ALPI francesa.
 - Añadimos un "traductor" para los colores de las fibras
