@@ -1,4 +1,4 @@
-# Codigo de colores
+# Código de colores
 Esto es un programa que pretende ayudar a los instaladores de fibra optica.
 Mediante una sencilla interfaz puedes seleccionar compañia y tipo de cable, introducir un numero y te dara los colores tanto del tubo como de la fibra.
 
